@@ -12,7 +12,7 @@ with open (sys.argv[1], "r") as promptfile:
 import openai
 
 while(True):
-  line = openai.Completion.create(model="davinci", prompt=prompt, stop=".", temperature=0, max_tokens=300)
+  line = repr(openai.Completion.create(model="davinci", prompt=prompt, stop=".", temperature=0, max_tokens=300))
   coqtop.sendline(line)
   coqtop.expect("\n\w* < ")
   if coqtop.before.find("Error".encode()) == -1:
