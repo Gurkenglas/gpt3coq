@@ -23,7 +23,7 @@ import openai
 
 while(True):
   prompt = prompt[-3000:]
-  line = openai.Completion.create(model="engine", prompt=prompt, stop=".", top_p=args.top_p, max_tokens=50)['choices'][0]['text'] + "."
+  line = openai.Completion.create(engine="davinci", prompt=prompt, stop=".", top_p=args.top_p, max_tokens=50)['choices'][0]['text'] + "."
   sys.stderr.write("Trying: " + line + "\n")
   coqtop.sendline(line)
   coqtop.expect("\n\w* < ")
