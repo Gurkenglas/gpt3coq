@@ -1,4 +1,4 @@
 # gpt3coq
 Make GPT-3 complete Coq files.
 
-Feel free to submit Coq files for completion. There's a soft upper limit of 2048-4096 characters that GPT-3 can take into account. Ideally, give it some examples to work with.
+Feel free to submit Coq files for completion. Ideally, give GPT-3 some examples to work with. GPT-3 will ignore everything but the last 3000 characters in the file when producing completions.
