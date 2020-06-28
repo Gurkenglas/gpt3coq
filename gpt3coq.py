@@ -8,12 +8,11 @@ if coqtop.before.find("Error".encode()) > -1:
 
 with open (sys.argv[1], "r") as promptfile:
   prompt = promptfile.read()
-  
+
 import openai
 
 while(True):
-  if prompt.length > 3000:
-    prompt = prompt[prompt.length-3000:]
+  prompt = prompt[-3000:]
   line = openai.Completion.create(model="engine", prompt=prompt, stop=".", temperature=0, max_tokens=300)['choices'][0]['text']
   coqtop.sendline(line)
   coqtop.expect("\n\w* < ")
