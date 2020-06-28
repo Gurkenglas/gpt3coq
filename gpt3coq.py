@@ -13,7 +13,7 @@ import openai
 
 while(True):
   prompt = prompt[-3000:]
-  line = openai.Completion.create(model="engine", prompt=prompt, stop=".", temperature=0, max_tokens=300)['choices'][0]['text']
+  line = openai.Completion.create(model="engine", prompt=prompt, stop=".", temperature=0.1, max_tokens=300)['choices'][0]['text'] + "."
   coqtop.sendline(line)
   coqtop.expect("\n\w* < ")
   if coqtop.before.find("Error".encode()) == -1:
