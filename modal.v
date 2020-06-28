@@ -38,4 +38,4 @@ Proof.
   unfix. exact H.
 Qed.
 
-Theorem fairfaircoops : Prudent <3 Fair.
+Theorem fairfaircoops : Fair <3 Fair.
